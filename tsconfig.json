@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "noEmit": true,
+        "target": "ESNext",
+        "strict": true,
+        "types": ["vitest/globals", "node"]
+      },
+      "include": [
+        "src/**/*"
+      ],
+      "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+      ]
+}
