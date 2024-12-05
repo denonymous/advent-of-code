@@ -1,4 +1,4 @@
-const debug = false
+// https://adventofcode.com/2024/day/3
 
 export const run1 = (input: string): number => {
   return [ ...(input.matchAll(/mul\((\d+),(\d+)\)/g)) ]

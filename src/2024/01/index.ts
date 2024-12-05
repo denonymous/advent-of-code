@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/1
+
 export const run1 = (input: string): number => {
   const [ left, right ] = parseInput(input)
   

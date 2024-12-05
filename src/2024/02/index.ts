@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/2
+
 const debug = false
 const problemThreshold = 1
 
