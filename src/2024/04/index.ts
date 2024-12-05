@@ -5,13 +5,13 @@ const debug = false
 export const run1 = (input: string): number => {
   const grid = generateGrid(input)
   return [ ...grid.keys() ]
-    .reduce((acc, curr) => acc += findWord(grid, JSON.parse(curr), 'XMAS'), 0) 
+    .reduce((acc, curr) => acc += findXMAS(grid, JSON.parse(curr)), 0) 
 }
 
 export const run2 = (input: string): number => {
   const grid = generateGrid(input)
   return [ ...grid.keys() ]
-    .reduce((acc, curr) => isValidCross(grid, JSON.parse(curr), 'MAS') ? acc + 1 : acc, 0)
+    .reduce((acc, curr) => isValidCross(grid, JSON.parse(curr)) ? acc + 1 : acc, 0)
 }
 
 const generateGrid = (input: string) => {
@@ -33,8 +33,8 @@ const generateGrid = (input: string) => {
   return ret
 }
   
-const findWord = (grid: Map<string, string>, start: Coords, word: string): number => {
-  const wordLetters = word.split('')
+const findXMAS = (grid: Map<string, string>, start: Coords): number => {
+  const wordLetters = 'XMAS'.split('')
   const wordCounter = [ ...wordLetters.keys() ]
 
   debug && console.log('start', `${start.x},${start.y}`)
@@ -57,7 +57,7 @@ const findWord = (grid: Map<string, string>, start: Coords, word: string): numbe
   return validDirections.length
 }
 
-const isValidCross = (grid: Map<string, string>, start: Coords, word: string): boolean => {
+const isValidCross = (grid: Map<string, string>, start: Coords): boolean => {
   const startLetter = grid.get(JSON.stringify(start))
 
   const upperLeft: Coords = { x: start.x - 1, y: start.y + 1 }
