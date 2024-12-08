@@ -22,5 +22,5 @@ test('#2 sample', () => {
 test('#2 actual', () => {
   const input = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8')
   const results = run2(input)
-  expect(results).toEqual(null)
+  expect(results).toEqual(1277)
 })
